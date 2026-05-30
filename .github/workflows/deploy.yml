@@ -39,9 +39,9 @@ jobs:
             docker rm backend-despacho || true
             docker run -d \
               --name backend-despacho \
-              -p 8081:8081 \
               --restart unless-stopped \
-              -e DB_ENDPOINT=${{ secrets.DB_ENDPOINT }} \
+              --network host \
+              -e DB_ENDPOINT=localhost \
               -e DB_PORT=${{ secrets.DB_PORT }} \
               -e DB_NAME=${{ secrets.DB_NAME }} \
               -e DB_USERNAME=${{ secrets.DB_USERNAME }} \
