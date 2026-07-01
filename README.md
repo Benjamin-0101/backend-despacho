@@ -337,3 +337,7 @@ aws ecs describe-services --region us-east-1 \
 ## Infraestructura
 
 La aplicación corre en **ECS Fargate** dentro del clúster `innovatech-cluster`, sin IP pública alcanzable directamente por el usuario final: todo el tráfico llega a través del ALB. El Security Group `backend-ecs-ep3` garantiza que solo el ALB pueda comunicarse con este servicio en el puerto 8081. No hay NAT Gateway ni subnets privadas en la VPC default del Lab — ver justificación de `assignPublicIp: ENABLED` en la sección de arquitectura (IE1).
+
+---
+
+**Cierre del proyecto:** 2026-07-01 — Encargo EP3-DevOps completo (Fases 1–8), evidencia de los indicadores IE1–IE7 documentada en este README.
